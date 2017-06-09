@@ -8,18 +8,15 @@
 			</tr>
 		</thead>
 		</tbody>
+		<?php
+		foreach ($Species as $Specie) { ?>
 			<tr>
-				<td>1</td>
-				<td>hond</td>
+				<td><?= $Specie ["species_id"] ?></td>
+				<td><?= $Specie ["species_description"] ?></td>
 				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
+				<td class="center"><a href="<?= URL ?>species/delete/<?= $Specie['species_id'] ?>">delete</a></td>
 			</tr>
-			<tr>
-				<td>2</td>
-				<td>kat</td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
-			</tr>
+			<?php } ?>
 		</tbody>
 	</table>
-		<p><a href="#">Create</a></p>
+		<p><a href="<?= URL ?>species/add">Add species</a></p>
