@@ -18,7 +18,7 @@
 				<td><?= $Client ["phone"] ?></td>
 				<td><?= $Client ["email"] ?></td>
 				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
+				<td class="center"><a href="<?= URL ?>clients/delete/<?= $Client['client_id'] ?>">delete</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

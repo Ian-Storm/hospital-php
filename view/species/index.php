@@ -2,7 +2,6 @@
 	<table>
 		<thead>
 			<tr>
-				<th>#</th>
 				<th>Description</th>
 				<th colspan="2">Action</th>
 			</tr>
@@ -10,8 +9,7 @@
 		</tbody>
 		<?php
 		foreach ($Species as $Specie) { ?>
-			<tr>
-				<td><?= $Specie ["species_id"] ?></td>
+			<tr>			
 				<td><?= $Specie ["species_description"] ?></td>
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="<?= URL ?>species/delete/<?= $Specie['species_id'] ?>">delete</a></td>
