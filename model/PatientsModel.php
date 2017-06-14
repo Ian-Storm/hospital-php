@@ -18,19 +18,21 @@ function getAllPatients()
 
 function addPatient()
 {
-	$firstname = isset($_POST["patient_name"]) ? $_POST["patient_name"] : NULL;
-	$lastname = isset($_POST["species_id"]) ? $_POST["species_id"] : NULL;
-	$phone = isset($_POST["client_id"]) ? $_POST["client_id"] : NULL;
-	$email = isset($_POST["patient_status"]) ? $_POST["patient_status"] : NULL;
+	$patient_name = isset($_POST["patient_name"]) ? $_POST["patient_name"] : NULL;
+	$species_id = isset($_POST["species_id"]) ? $_POST["species_id"] : NULL;
+	$gender = isset($_POST["gender"]) ? $_POST["gender"] : NULL;
+	$patient_status = isset($_POST["patient_status"]) ? $_POST["patient_status"] : NULL;
+	$client_id = isset($_POST["client_id"]) ? $_POST["client_id"] : NULL;
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO patients(patient_name, species_id, client_id, patient_status) VALUES (:patient_name, :species_id, :client_id, :patient_status)";
+	$sql = "INSERT INTO patients(patient_name, species_id, gender,patient_status ,client_id ) VALUES (:patient_name, :species_id, :gender, :patient_status, :client_id )";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		":patient_name" => $patient_name,
 		":species_id" => $species_id,
-		":client_id" => $client_id,
-		":patient_status" => $patient_status
+		":gender" => $gender,
+		":patient_status" => $patient_status,
+		":client_id" => $client_id
 		));
 
 	$db = null;

@@ -9,27 +9,16 @@
 				<th>Client</th>
 			</tr>
 		</thead>
-		</tbody>
+			</tbody>
+			<?php
+		foreach ($patients as $patient) { ?>
 			<tr>
-				<td>Bobbie</td>
-				<td>Dog</td>
-				<td>Male</td>
-				<td>Ill, eats badly, barks to much</td>
-				<td>John Doe</td>
+				<td><?= $patient ["patient_name"] ?></td>
+				<td><?= $patient ["species_description"] ?></td>
+				<td><?= $patient ["gender"] ?></td>
+				<td><?= $patient ["patient_status"] ?></td>
+				<td><?= $patient ["client_firstname"] . " " . $patient ["client_lastname"] ?></td>
 			</tr>
-			<tr>
-				<td>Minoes</td>
-				<td>Cat</td>
-				<td>Female</td>
-				<td>Does not drink, loses hair, skinny</td>
-				<td>Jane Doe</td>
-			</tr>
-			<tr>
-				<td>Kees</td>
-				<td>Dog</td>
-				<td>Male</td>
-				<td>eats to much, greed, howls and barks a lot</td>
-				<td>John Doe</td>
-			</tr>
+			<?php } ?>
 		</tbody>
 	</table>

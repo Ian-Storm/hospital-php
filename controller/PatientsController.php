@@ -11,7 +11,9 @@ function index()
 
 function add()
 {
-	render("patients/add");
+	render("patients/add", array(
+		'patients' => getAllPatients()
+	));
 }
 
 function addSave()
