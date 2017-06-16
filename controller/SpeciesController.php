@@ -31,3 +31,17 @@ function delete($id)
 	}
 	header("Location:" . URL . "species/index");
 }
+
+function edit($id)
+{
+	render("species/edit" , array("specie" => getSpecie($id)));
+}
+
+function editSave()
+{
+	if (!editSpecies()) {
+		header("location:". URL . "Error/index");
+		exit();
+	}
+	header("location:". URL . "species/index");
+}

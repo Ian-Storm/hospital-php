@@ -11,7 +11,7 @@
 		foreach ($Species as $Specie) { ?>
 			<tr>			
 				<td><?= $Specie ["species_description"] ?></td>
-				<td class="center"><a href="#">edit</a></td>
+				<td class="center"><a href="<?= URL ?>species/edit/<?= $Specie['species_id'] ?>">edit</a></td>
 				<td class="center"><a href="<?= URL ?>species/delete/<?= $Specie['species_id'] ?>">delete</a></td>
 			</tr>
 			<?php } ?>

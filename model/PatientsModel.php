@@ -16,6 +16,32 @@ function getAllPatients()
 	return $query->fetchAll();
 }
 
+function getAllSpecies() 
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM `species`";
+	$query = $db->prepare($sql);
+	$query->execute();
+
+	$db = null;
+
+	return $query->fetchAll();
+}
+
+function getAllClients() 
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM `clients`";
+	$query = $db->prepare($sql);
+	$query->execute();
+
+	$db = null;
+
+	return $query->fetchAll();
+}
+
 function addPatient()
 {
 	$patient_name = isset($_POST["patient_name"]) ? $_POST["patient_name"] : NULL;
