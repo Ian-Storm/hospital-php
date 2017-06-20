@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="<?= URL ?>css/style.css">
 </head>
 <body>
-	<h1>Hospital</h1>
+	<h1>Animal Hospital</h1>
 	<ul>
 		<li><a href="<?= URL ?>patients/index">Patiënts</a></li>
 		<li><a href="<?= URL ?>clients/index">Cliënts</a></li>

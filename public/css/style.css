@@ -1,6 +1,9 @@
 body {
 	margin : 0 auto;
 	width : 700px;
+	background-image: url("../public/css/images/hospital.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 table {
@@ -27,7 +30,7 @@ td.center{
 }
 
 a {
-	color : black;
+	color : red;
 }
 p.options{
 	text-align : right;
@@ -39,4 +42,8 @@ label {
 }
 form div {
 	margin: 5px 0;
+}
+
+h1, h2{
+	color: blue;
 }
