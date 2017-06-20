@@ -83,3 +83,42 @@ function deletePatient($id)
 	
 	return true;
 }
+
+function editPatients()
+{
+	$name = isset($_POST["name"]) ? $_POST["name"] : NULL;
+	$species = isset($_POST["species"]) ? $_POST["species"] : NULL;
+	$gender = isset($_POST["gender"]) ? $_POST["gender"] : NULL;
+	$status = isset($_POST["status"]) ? $_POST["status"] : NULL;
+	$client = isset($_POST["client"]) ? $_POST["client"] : NULL;
+	$id = isset($_POST["id"]) ? $_POST["id"] : NULL;
+	$db = openDatabaseConnection();
+
+	$sql = "UPDATE patients SET patient_name = :name, species_id = :species, gender = :gender, client_id = :client , patient_status = :status WHERE patient_id = :patient_id";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		":name" => $name,
+		":species" => $species,
+		":gender" => $gender,
+		":status" => $status,
+		":client" => $client,
+		"patient_id" => $id
+		));
+
+	$db = null;
+
+	return true;
+}
+
+function getPatient($id) 
+{
+	$db = openDatabaseConnection();
+
+	$sql = "SELECT * FROM patients WHERE patient_id = :id";
+	$query = $db->prepare($sql);
+	$query->execute(array(":id" => $id));
+
+	$db = null;
+
+	return $query->fetch();
+}

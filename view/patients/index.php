@@ -19,7 +19,7 @@
 				<td><?= $patient ["gender"] ?></td>
 				<td><?= $patient ["patient_status"] ?></td>
 				<td><?= $patient ["client_firstname"] . " " . $patient ["client_lastname"] ?></td>
-				<td class="center"><a href="#">edit</a></td>
+				<td class="center"><a href="<?= URL ?>patients/edit/<?= $patient['patient_id'] ?>">edit</a></td>
 				<td class="center"><a href="<?= URL ?>patients/delete/<?= $patient['patient_id'] ?>">delete</a></td>
 			</tr>
 			<?php } ?>

@@ -31,3 +31,17 @@ function delete($id)
 	}
 	header("Location:" . URL . "clients/index");
 }
+
+function edit($id)
+{
+	render("clients/edit" , array("client" => getClient($id)));
+}
+
+function editSave()
+{
+	if (!editClients()) {
+		header("location:". URL . "Error/index");
+		exit();
+	}
+	header("location:". URL . "clients/index");
+}

@@ -34,3 +34,19 @@ function delete($id)
 	}
 	header("Location:" . URL . "patients/index");
 }
+
+function edit($id)
+{
+	render("patients/edit" , array("patient" => getPatient($id),
+		'species' => getAllSpecies(),
+		'clients' => getAllClients()));
+}
+
+function editSave()
+{
+	if (!editPatients()) {
+		header("location:". URL . "Error/index");
+		exit();
+	}
+	header("location:". URL . "patients/index");
+}
